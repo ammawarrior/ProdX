@@ -7,6 +7,13 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+
+if (!in_array($_SESSION['role'], [1, 2, 3])) {
+    header("Location: login.php");
+    exit();
+}
+
+
 // Include database connection
 include 'prodx_db.php';
 
@@ -29,15 +36,15 @@ $stmt->close();
 
 // Role mapping
 $roles = [
-    1 => "Admin",
-    2 => "Staff"
+    1 => 'Admin',
+    2 => 'Innovator',
+    3 => 'Client'
 ];
 
 // Handle form submission for update
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $role = $_POST['role'];
     $code_name = $_POST['code_name'];
     $password = !empty($_POST['password']) ? password_hash($_POST['password'], PASSWORD_DEFAULT) : $user['password'];
     
@@ -47,34 +54,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update'])) {
         $target_file = $target_dir . basename($_FILES['user_picture']['name']);
         if (move_uploaded_file($_FILES['user_picture']['tmp_name'], $target_file)) {
             $user_picture = $target_file;
-            $update_query = "UPDATE users SET username = ?, email = ?, role = ?, code_name = ?, user_picture = ?, password = ? WHERE user_id = ?";
+           $update_query = "UPDATE users SET username = ?, email = ?, code_name = ?, user_picture = ?, password = ? WHERE user_id = ?";
             $stmt = $conn->prepare($update_query);
-            $stmt->bind_param("ssisssi", $username, $email, $role, $code_name, $user_picture, $password, $user_id);
+            $stmt->bind_param("sssisi", $username, $email, $code_name, $user_picture, $password, $user_id);
+
+
         }
     } else {
-        $update_query = "UPDATE users SET username = ?, email = ?, role = ?, code_name = ?, password = ? WHERE user_id = ?";
-        $stmt = $conn->prepare($update_query);
-        $stmt->bind_param("ssissi", $username, $email, $role, $code_name, $password, $user_id);
+            $update_query = "UPDATE users SET username = ?, email = ?, code_name = ?, user_picture = ?, password = ? WHERE user_id = ?";
+            $stmt = $conn->prepare($update_query);
+            $stmt->bind_param("sssisi", $username, $email, $code_name, $user_picture, $password, $user_id);
+
     }
     
     $stmt->execute();
     $stmt->close();
     
-    header("Location: manage_user.php?success=updated");
-    exit();
+if ($user['role'] == 1) {
+    header("Location: admin.php");
+} elseif ($user['role'] == 2) {
+    header("Location: seller.php");
+} elseif ($user['role'] == 3) {
+    header("Location: dashboard.php");
 }
 
-// Handle delete user
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
-    $delete_query = "DELETE FROM users WHERE user_id = ?";
-    $stmt = $conn->prepare($delete_query);
-    $stmt->bind_param("i", $user_id);
-    $stmt->execute();
-    $stmt->close();
-    
-    header("Location: manage_user.php?success=deleted");
-    exit();
+
+exit();
+
+
 }
+
+
 
 $conn->close();
 ?>
@@ -196,15 +206,10 @@ $conn->close();
         <?php if ($user): ?>
             <form method="POST" enctype="multipart/form-data">
             <div class="form-group">
-                    <label>Role</label>
-                    <select name="role" required>
-                        <?php foreach ($roles as $key => $role_name): ?>
-                            <option value="<?php echo $key; ?>" <?php echo ($user['role'] == $key) ? 'selected' : ''; ?>>
-                                <?php echo $role_name; ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
+    <label>Role</label>
+    <input type="text" value="<?php echo $roles[$user['role']]; ?>" readonly>
+</div>
+
             
                 <div class="form-group">
                     <label>Username</label>
@@ -227,8 +232,19 @@ $conn->close();
                     <input type="file" name="user_picture" accept="image/*">
                 </div>
                 <div class="button-group">
-                    <a href="manage_user.php" class="btn-primary">Back</a>
-                    <button type="submit" name="delete" class="btn-primary" onclick="return confirm('Are you sure?')">Delete</button>
+                                <?php
+                   $back_link = '#';
+if ($user['role'] == 1) {
+    $back_link = 'admin.php';
+} elseif ($user['role'] == 2) {
+    $back_link = 'seller.php';
+} elseif ($user['role'] == 3) {
+    $back_link = 'dashboard.php';
+}
+
+                    ?>
+                    <a href="<?php echo $back_link; ?>" class="btn-primary">Back</a>
+
                     <button type="submit" name="update" class="btn-primary">Update</button>
                 </div>
             </form>
@@ -236,5 +252,31 @@ $conn->close();
             <p style="color: white;">User not found.</p>
         <?php endif; ?>
     </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const roleSelect = document.querySelector('select[name="role"]');
+        const backButton = document.getElementById('backButton');
+
+        function updateBackHref() {
+    const role = roleSelect.value;
+    if (role === '1') {
+        backButton.href = 'admin.php';
+    } else if (role === '2') {
+        backButton.href = 'seller.php';
+    } else if (role === '3') {
+        backButton.href = 'dashboard.php';
+    } else {
+        backButton.href = '#';
+    }
+}
+
+
+        updateBackHref(); // Set initially
+        roleSelect.addEventListener('change', updateBackHref); // Update if role changes
+    });
+</script>
+
+
 </body>
 </html>
