@@ -124,9 +124,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <div class="form-group">
                                 <label>Category</label>
                                 <select name="category" class="form-control" required>
-                                    <option value="1" <?= $product['category'] == 1 ? 'selected' : '' ?>>Agriculture Products</option>
-                                    <option value="2" <?= $product['category'] == 2 ? 'selected' : '' ?>>Healthcare Products</option>
-                                    <option value="3" <?= $product['category'] == 3 ? 'selected' : '' ?>>Energy Products</option>
+                                    <option value="1" <?= $product['category'] == 1 ? 'selected' : '' ?>>SETUP Assisted Products</option>
+                                    <option value="2" <?= $product['category'] == 2 ? 'selected' : '' ?>>Agriculture Products</option>
+                                    <option value="3" <?= $product['category'] == 3 ? 'selected' : '' ?>>Food Products</option>
                                 </select>
                             </div>
 

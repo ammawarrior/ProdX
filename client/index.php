@@ -21,99 +21,58 @@
     <img src="assets/images/loader.gif" alt="Loading..." />
 </div>
 <div class="pageWrapper">
-	<!--Search Form Drawer-->
-	<div class="search">
-        <div class="search__form">
-            <form class="search-bar__form" action="#">
-                <button class="go-btn search__button" type="submit"><i class="icon anm anm-search-l"></i></button>
-                <input class="search__input" type="search" name="q" value="" placeholder="Search entire store..." aria-label="Search" autocomplete="off">
-            </form>
-            <button type="button" class="search-trigger close-btn"><i class="anm anm-times-l"></i></button>
+        <!--Search Form Drawer-->
+        <div class="search">
+            <div class="search__form">
+                <form class="search-bar__form" action="#">
+                    <button class="go-btn search__button" type="submit"><i class="icon anm anm-search-l"></i></button>
+                    <input class="search__input" type="search" name="q" value="" placeholder="Search entire store..." aria-label="Search" autocomplete="off">
+                </form>
+                <button type="button" class="search-trigger close-btn"><i class="anm anm-times-l"></i></button>
+            </div>
         </div>
-    </div>
-    <!--End Search Form Drawer-->
-    <!--Header-->
-    <div class="header-wrap animated d-flex border-bottom">
-    	<div class="container-fluid">        
-            <div class="row align-items-center">
-            	<!--Desktop Logo-->
-                <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
-                    <a href="index.php**">
-                    	<img src="assets/images/logo.svg" alt="proDX: The Digital Catalog for DOST X - Assisted Products" title="proDX: The Digital Catalog for DOST X - Assisted Products" />
-                    </a>
-                </div>
-                <!--End Desktop Logo-->
-                <div class="col-2 col-sm-3 col-md-3 col-lg-8">
-                	<div class="d-block d-lg-none">
-                        <button type="button" class="btn--link site-header__menu js-mobile-nav-toggle mobile-nav--open">
-                        	<i class="icon anm anm-times-l"></i>
-                            <i class="anm anm-bars-r"></i>
-                        </button>
-                    </div>
-                	<!--Desktop Menu-->
-                	<nav class="grid__item" id="AccessibleNav"><!-- for mobile -->
-                        <ul id="siteNav" class="site-nav medium center hidearrow">
-                            <li class="lvl1"><a href="#">HOME <i class="anm anm-angle-down-l"></i></a></li>
-                            <li class="lvl1 parent dropdown"><a href="#">Pages <i class="anm anm-angle-down-l"></i></a>
-                          <ul class="dropdown">
-                          	<li><a href="cart-variant1.php**" class="site-nav">Cart Page <i class="anm anm-angle-right-l"></i></a>
-                                <ul class="dropdown">
-                                    <li><a href="cart-variant1.php**" class="site-nav">Cart Variant1</a></li>
-                                    <li><a href="cart-variant2.php**" class="site-nav">Cart Variant2</a></li>
-                                 </ul>
-                            </li>
-                            <li><a href="compare-variant1.php**" class="site-nav">Compare Product <i class="anm anm-angle-right-l"></i></a>
-                                <ul class="dropdown">
-                                    <li><a href="compare-variant1.php**" class="site-nav">Compare Variant1</a></li>
-                                    <li><a href="compare-variant2.php**" class="site-nav">Compare Variant2</a></li>
-                                 </ul>
-                            </li>
-							<li><a href="checkout.php**" class="site-nav">Checkout</a></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </nav>
-                    <!--End Desktop Menu-->
-                </div>
-                <!--Mobile Logo-->
-                <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
-                	<div class="logo">
-                        <a href="index.php**">
+        <!--End Search Form Drawer-->
+         <!--Header-->
+         <div class="header-wrap animated d-flex border-bottom">
+            <div class="container-fluid">        
+                <div class="row align-items-center">
+                    <!--Desktop Logo-->
+                    <div class="logo col-md-2 col-lg-2 d-none d-lg-block">
+                        <a href="index.php">
                             <img src="assets/images/logo.svg" alt="proDX: The Digital Catalog for DOST X - Assisted Products" title="proDX: The Digital Catalog for DOST X - Assisted Products" />
                         </a>
                     </div>
+                    <!--End Desktop Logo-->
+                    <div class="col-2 col-sm-3 col-md-3 col-lg-8">
+                        <div class="d-block d-lg-none">
+                            <button type="button" class="btn--link site-header__menu js-mobile-nav-toggle mobile-nav--open">
+                                <i class="icon anm anm-times-l"></i>
+                                <i class="anm anm-bars-r"></i>
+                            </button>
+                        </div>
+                        <!--Desktop Menu-->
+                        <nav class="grid__item" id="AccessibleNav"><!-- for mobile -->
+                            <ul id="siteNav" class="site-nav medium center hidearrow">
+                                <li class="lvl1"><a href="index.php">HOME <i class="anm anm-angle-down-l"></i></a></li>
+                                <li class="lvl1"><a href="products.php">PRODUCTS</a></li>
+                                <li class="lvl1"><a href="about-us.php">ABOUT US</a></li>
+                            </ul>
+                        </nav>
+                        <!--End Desktop Menu-->
+                    </div>
+                    <!--Mobile Logo-->
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-2 d-block d-lg-none mobile-logo">
+                        <div class="logo">
+                            <a href="index.php">
+                                <img src="assets/images/logo.svg" alt="proDX: The Digital Catalog for DOST X - Assisted Products" title="proDX: The Digital Catalog for DOST X - Assisted Products" />
+                            </a>
+                        </div>
+                    </div>
+                    <!--Mobile Logo-->
                 </div>
-                <!--Mobile Logo-->
-        	</div>
+            </div>
         </div>
-    </div>
-    <!--End Header-->
-    <!--Mobile Menu-->
-    <div class="mobile-nav-wrapper" role="navigation">
-		<div class="closemobileMenu"><i class="icon anm anm-times-l pull-right"></i> Close Menu</div>
-        <ul id="MobileNav" class="mobile-nav">
-            <li class="lvl1"><a href="#">HOME</a>
-        	<li class="lvl1 parent megamenu"><a href="about-us.php**">Pages <i class="anm anm-plus-l"></i></a>
-          <ul>
-          	<li><a href="cart-variant1.php**" class="site-nav">Cart Page <i class="anm anm-plus-l"></i></a>
-                <ul class="dropdown">
-                    <li><a href="cart-variant1.php**" class="site-nav">Cart Variant1</a></li>
-                    <li><a href="cart-variant2.php**" class="site-nav">Cart Variant2</a></li>
-                 </ul>
-            </li>
-            <li><a href="compare-variant1.php**" class="site-nav">Compare Product <i class="anm anm-plus-l"></i></a>
-                <ul class="dropdown">
-                    <li><a href="compare-variant1.php**" class="site-nav">Compare Variant1</a></li>
-                    <li><a href="compare-variant2.php**" class="site-nav">Compare Variant2</a></li>
-                 </ul>
-            </li>
-          </ul>
-        </li>
-
-        </li>
-      </ul>
-	</div>
-	<!--End Mobile Menu-->
+        <!--End Header-->
     <!--Body Content-->
     <div id="page-content">
     	<!--Home slider-->
@@ -168,7 +127,7 @@
                 	<div class="row img-grid-banner1">
                     	<div class="col-12 col-sm-12 col-md-12 col-lg-6 image-banner-1">
                         	<div class="inner topright">
-                            	<a href="#">	
+                            	<a href="products.php?category=3">	
                                		<img data-src="assets/images/collection/home11-grid-sm-banner1.jpg" src="assets/images/collection/home11-grid-sm-banner1.jpg" alt="Halloween Look" title="Halloween Look" class="blur-up lazyload" />
                                     <div class="ttl">
                                     	Browse <h5>Food Products</h5>
@@ -180,10 +139,10 @@
                         	<div class="row">
                             	<div class="col-12 col-sm-6 col-md-6 col-lg-6 image-banner-3">
                                 	<div class="inner topright">
-                                        <a href="#">	
-                                            <img data-src="assets/images/collection/home11-grid-sm-banner2.jpg" src="assets/images/collection/home11-grid-sm-banner2.jpg" alt="Heeled Boots" title="Heeled Boots" class="blur-up lazyload" />
+                                    <a href="products.php?category=2">	
+                                    <img data-src="assets/images/collection/home11-grid-sm-banner2.jpg" src="assets/images/collection/home11-grid-sm-banner2.jpg" alt="Heeled Boots" title="Heeled Boots" class="blur-up lazyload" />
                                             <div class="ttl">
-                                                Browse <h5>Engineered Bamboo</h5>
+                                                Browse <h5>Agricultural Products</h5>
                                             </div>
                                         </a>
                                     </div>
@@ -202,7 +161,7 @@
                             <div class="row">
                             	<div class="col-12 col-sm-12 col-md-12 col-lg-12 mt-4">
                                 	<div class="inner center">
-                                        <a href="#">	
+                                        <a href="products.php?category=1">	
                                             <img data-src="assets/images/collection/home11-grid-sm-banner4.jpg" src="assets/images/collection/home11-grid-sm-banner4.jpg" alt="Sun Glasses, Shoes and more" title="Sun Glasses, Shoes and more" class="blur-up lazyload" />
                                             <div class="ttl">
                                                 Browse <h5>DOST Assisted Products by Province</h5>
@@ -300,31 +259,21 @@
     </div>
     <!--End Body Content-->
     
-    <!--Footer-->
-    <footer id="footer" class="footer-3">
+<!--Footer-->
+    <footer id="footer">
         <div class="site-footer">
-        	<div class="container-fluid">
+        	<div class="container">
      			<!--Footer Links-->
-            	<div class="footer-top">
+     			<div class="footer-top">
                 	<div class="row">
-                    	<div class="col-12 col-sm-12 col-md-6 col-lg-6 contact-box">
-                        	<h4 class="h4">ABOUT US</h4>
-                            <p>The ProDX: The Digital Catalog for DOST X - Assisted Products is proposed as a centralized, digital platform to showcase the innovations and their broader impact on communities and industries.
-                                ProDX, pronounced as "products," combines D for DOST and X for Region 10, highlighting its regional focus and purpose.
-                                </p>
-                            <ul class="addressFooter">
-                                <li class="phone"><i class="icon anm anm-phone-s"></i><p>(63) 915 123 456</p></li>
-                                <li class="email"><i class="icon anm anm-envelope-l"></i><p>contact@region10.dost.gov.ph</p></li>
-                            </ul>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                    	<div class="col-12 col-sm-12 col-md-6 col-lg-6 footer-links">
                         	<h4 class="h4">Informations</h4>
                             <ul>
                             	<li><a href="#">About us</a></li>
                                 <li><a href="#">Contact Us</a></li>
                             </ul>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 footer-links">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 footer-links">
                         	<h4 class="h4">Customer Services</h4>
                             <ul>
                             	<li><a href="#">Request Personal Data</a></li>
@@ -375,7 +324,7 @@
                                 </div>
                                 <p class="product-single__price product-single__price-product-template">
                                     <span class="visually-hidden">Regular price</span>
-                                    <s id="ComparePrice-product-template"><span class="money">Php 600.00</span></s>
+                                    <s id="ComparePrice-product-template"><span class="money">Php 600.00</span>
                                     <span class="product-price__price product-price__price-product-template product-price__sale product-price__sale--single">
                                         <span id="ProductPrice-product-template"><span class="money">Php 500.00</span></span>
                                     </span>
@@ -401,8 +350,6 @@
                             </div>
                         </div>
                 </div>
-            </div>
-                <!--End-product-single-->
                 </div>
             </div>
         		</div>
@@ -421,6 +368,50 @@
      <script src="assets/js/popper.min.js"></script>
      <script src="assets/js/lazysizes.js"></script>
      <script src="assets/js/main.js"></script>
+     <!-- Photoswipe Gallery -->
+     <script src="assets/js/vendor/photoswipe.min.js"></script>
+     <script src="assets/js/vendor/photoswipe-ui-default.min.js"></script>
+     <script>
+        $(function(){
+            var $pswp = $('.pswp')[0],
+                image = [],
+                getItems = function() {
+                    var items = [];
+                    $('.lightboximages a').each(function() {
+                        var $href   = $(this).attr('href'),
+                            $size   = $(this).data('size').split('x'),
+                            item = {
+                                src : $href,
+                                w: $size[0],
+                                h: $size[1]
+                            }
+                            items.push(item);
+                    });
+                    return items;
+                }
+            var items = getItems();
+        
+            $.each(items, function(index, value) {
+                image[index]     = new Image();
+                image[index].src = value['src'];
+            });
+            $('.prlightbox').on('click', function (event) {
+                event.preventDefault();
+              
+                var $index = $(".active-thumb").parent().attr('data-slick-index');
+                $index++;
+                $index = $index-1;
+        
+                var options = {
+                    index: $index,
+                    bgOpacity: 0.9,
+                    showHideOpacity: true
+                }
+                var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+                lightBox.init();
+            });
+        });
+        </script>
 </div>
 </body>
 </html>
